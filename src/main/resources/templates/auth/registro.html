@@ -17,22 +17,22 @@
                         <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
                         <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
                         
-                        <form th:action="@{/auth/registro}" th:object="${usuario}" method="post">
+                        <form th:action="@{/registro}" th:object="${usuario}" method="post">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre completo</label>
-                                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombre}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" th:field="*{email}" required>
+                                <input type="email" class="form-control" id="email" name="email" th:field="*{email}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="contraseña" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="contraseña" th:field="*{contraseña}" required>
+                                <input type="password" class="form-control" id="contraseña" name="contraseña" th:field="*{contraseña}" required>
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary">Registrarse</button>
-                                <a th:href="@{/auth/login}" class="btn btn-link">¿Ya tienes cuenta? Inicia sesión</a>
+                                <a th:href="@{/login}" class="btn btn-link">¿Ya tienes cuenta? Inicia sesión</a>
                             </div>
                         </form>
                     </div>
